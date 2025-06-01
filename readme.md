@@ -21,7 +21,6 @@ Este proyecto implementa un sistema de seguimiento de paquetes a través de serv
 * 🗃️ Generar un log detallado de cada consulta con la respuesta y eventos retornados.
 
 ```
----
 ```
 ---
 ## 🧩 Estructura de la actividad
