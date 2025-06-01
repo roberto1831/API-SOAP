@@ -58,10 +58,7 @@ EnviosExpress_S.A.C/
 * `TrackingEvent`: Registro histórico de eventos por los que ha pasado un paquete.
 * `GetTrackingStatusRequest`: Clase que registra solicitudes SOAP de rastreo.
 * `GetTrackingStatusResponse`: Estructura XML devuelta al cliente con el estado actual y eventos.
-```
----
 
-```
 ## 🌐 Operaciones  SOAP disponibles
 ### 1. 📦 Servicio de Gestión de Paquetes
 Servicio: `TrackingService`  
