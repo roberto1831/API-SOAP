@@ -62,7 +62,7 @@ EnviosExpress_S.A.C/
 ## 🌐 Operaciones  SOAP disponibles
 ### 1. 📦 Servicio de Gestión de Paquetes
 Servicio: `TrackingService`  
-* WSDL: Disponible en `http://localhost:8080/services/TrackingService?wsdl`
+* WSDL: Disponible en http://localhost:8080/services/TrackingService?wsdl
 * Operaciones:
 ```
 | Método SOAP              | Descripción                                         |
