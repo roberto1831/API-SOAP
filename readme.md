@@ -20,8 +20,7 @@ Este proyecto implementa un sistema de seguimiento de paquetes a través de serv
 * 🔎 Consultar el estado actual de un paquete mediante su número de tracking.
 * 🗃️ Generar un log detallado de cada consulta con la respuesta y eventos retornados.
 
-```
-```
+
 ---
 ## 🧩 Estructura de la actividad
 
