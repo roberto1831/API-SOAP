@@ -233,7 +233,7 @@ mvn spring-boot:run
 
 **Roberto Toapanta**  
 **Javier Curimilma**  
-Ingeniero en Tecnologías de la Información  
+Ingenieria en Tecnologías de la Información  
 Proyecto académico - Universidad de las Fuerzas Armadas ESPE
 
 ---
