@@ -160,40 +160,60 @@ getTrackingStatus(GetTrackingStatusRequest request) - Retorna el estado del paqu
 ```
 ### ✉️ Ejemplo de Solicitud SOAP
 ```
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-<soap:Body>
-<GetTrackingStatusRequest>
-<trackingNumber>EX123456789</trackingNumber>
-</GetTrackingStatusRequest>
-</soap:Body>
-</soap:Envelope>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.C.A.EnviosExpress_S/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:GetTrackingStatus>
+         <!--Optional:-->
+         <GetTrackingStatusRequest>
+            <trackingNumber>EXP987694322</trackingNumber>
+         </GetTrackingStatusRequest>
+      </ser:GetTrackingStatus>
+   </soapenv:Body>
+</soapenv:Envelope>
 ```
 ### 📨 Respuesta
 ```
-<GetTrackingStatusResponse>
-  <status>En tránsito</status>
-  <currentLocation>Ambato</currentLocation>
-  <estimatedDeliveryDate>2025-05-31</estimatedDeliveryDate>
-  <history>
-    <event>
-      <date>2025-05-26</date>
-      <location>Quito</location>
-      <description>Recolectado</description>
-    </event>
-  </history>
-</GetTrackingStatusResponse>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:GetTrackingStatusResponse xmlns:ns2="http://services.C.A.EnviosExpress_S/">
+         <GetTrackingStatusResponse>
+            <status>Despachado</status>
+            <currentLocation>Machala</currentLocation>
+            <estimatedDeliveryDate>2025-06-03</estimatedDeliveryDate>
+            <history>
+               <event>
+                  <date>2025-05-26</date>
+                  <location>Cuenca</location>
+                  <description>Recolectado en agencia principal</description>
+               </event>
+               <event>
+                  <date>2025-05-27</date>
+                  <location>Riobamba</location>
+                  <description>En tránsito hacia Ambato</description>
+               </event>
+            </history>
+         </GetTrackingStatusResponse>
+      </ns2:GetTrackingStatusResponse>
+   </soap:Body>
+</soap:Envelope>
 ```
 ### ❌ Ejemplo de Error SOAP
 ```
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <soap:Body>
-    <soap:Fault>
-      <faultcode>soap:Client</faultcode>
-      <faultstring>Paquete no encontrado para el tracking: EX000000000</faultstring>
-    </soap:Fault>
-  </soap:Body>
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Error de tracking - Detalles: Paquete no encontrado para el tracking: EXP987694389</faultstring>
+         <detail>
+            <ns1:TrackingError xmlns:ns1="http://logistica.com/ws/tracking">
+               <fieldWithError xmlns:ns2="http://services.C.A.EnviosExpress_S/">trackingNumber</fieldWithError>
+               <errorCode xmlns:ns2="http://services.C.A.EnviosExpress_S/">404</errorCode>
+            </ns1:TrackingError>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
 </soap:Envelope>
-
 ```
 
 
